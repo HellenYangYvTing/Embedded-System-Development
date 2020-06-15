@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax4</title>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+	</head>
+<body>
+​	
+<div id="div1"><h2>室内温度</h2></div>
+<button type="button" onclick="loadXMLDoc()">修改内容</button>
+​<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		// $("#div1").load("/t01/demo.txt");
+		$.getJSON("/cgi-bin/cgi_ajax",function(data){
+			console.log(data);
+			var context = "<h2>This is the temperater of our city:" + data.temp+ "</h2>" ;
+		  	$("#div1").html(context);
+		  	});
+	});
+});
+</script>
+</body>
+</html>

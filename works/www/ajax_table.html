@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax3</title>
+	<link href="https://www.w3cschool.cn/statics/demosource/myblog/myblog.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+	</head>
+<body>
+​	<table class="table" id="tab_ctx">
+
+                <tr>
+                    <th>Day</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                </tr>
+                <tr>
+                    <td>8:00-8:30</td>
+                    <td>Learn</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td></td>
+                    <td>Practice</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10:00-13:30</td>
+                    <td></td>
+                    <td></td>
+                    <td >Play</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>15:45-17:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td >Code</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>18:00-18:15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Discuss</td>
+                </tr>
+                
+	</table>
+<button type="button">添加任务</button>
+​<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		// $("#div1").load("/t01/demo.txt");
+		$.getJSON("/t01/table.txt",function(data){
+			console.log(data);
+			var falgs = ["未开始","下载中","暂停","完成"];
+			var context = "<tr><td>" + data.id + "</td><td>"+
+						data.name + "</td><td>"+
+						data.task_size + "</td><td>"+
+						data.task_speed + "</td><td>"+
+						data.task_process + "</td><td>"+
+						falgs[data.task_status] + "</td></tr>";
+			$("#tab_ctx").append(context);
+		  	});
+
+	});
+});
+</script>
+</body>
+</html>

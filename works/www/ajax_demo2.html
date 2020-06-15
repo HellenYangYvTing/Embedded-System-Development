@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax</title>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+	</head>
+<body>
+​	
+<div id="div1"><h2>使用 AJAX 修改该文本内容</h2></div>
+<button type="button" onclick="loadXMLDoc()">修改内容</button>
+​<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#div1").load("/t01/demo.txt");
+	});
+});
+</script>
+</body>
+</html>

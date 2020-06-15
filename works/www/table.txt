@@ -1,0 +1,8 @@
+{
+	"id":2,
+	"name": "海王",
+	"task_size": "1.22GB",
+	"task_speed": "199 kB/s",
+	"task_process": "98.3%",
+	"task_status": 2
+}
